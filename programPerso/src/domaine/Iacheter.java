@@ -1,0 +1,6 @@
+package domaine;
+
+public interface Iacheter {
+ public void payer ();
+ public void demanderUnCredit() ;
+}
