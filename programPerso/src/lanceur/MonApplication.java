@@ -7,6 +7,7 @@ import domaine.Agent;
 import domaine.Client;
 import domaine.MaxiAgent;
 import domaine.Propriete;
+import domaine.TypeBien;
 
 
 
@@ -24,7 +25,7 @@ int nbAgent = sc.nextInt();
 System.out.println(nbAgent);
 
 
-//for (int i=1;i<nbAgent;i++)
+//TODO for (int i=1;i<nbAgent;i++)
 
 	
 // declaration
@@ -42,8 +43,12 @@ Propriete propriete4;
 
 
 
-// instanciation
 
+ //test enum//
+ System.out.println("le type de bien est "+ TypeBien.garage);
+
+//instanciation
+ 
  Scanner sc1 = new Scanner(System.in);
  System.out.println("entrez le nom de l'agent :");
  		     String nomA = sc1.nextLine();
