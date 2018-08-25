@@ -1,5 +1,7 @@
 package domaine;
 
+import java.util.Scanner;
+
 public class Agent {
 
 // attributs
@@ -78,6 +80,30 @@ private Propriete PropAgent ;
 	}
 	// declaration methode
 	
+	
+	
+	//a supprimer
+	
+	
+	
+	
+////liee au nbre agent ///////////////////////////////////////
+	public static void declarer ()
+	{
+			 System.out.println("******************************************************");
+	System.out.println(" il s'agit de remplir le nrbe d'agent \n");
+	System.out.println("commencer par renseigner les effectifs");
+	System.out.println();
+	System.out.println("combien d'agent souhaite vous declarer?");		
+	Scanner sc = new Scanner(System.in);
+	int nbAgent = sc.nextInt();
+
+	System.out.println(nbAgent);
+	
+	}
+	
+	
+	
 	public void voir (String theme) {
 		System.out.println( "cher agent"+ " "+ getNom()+ " "+ getPrenom()+ " "+ "voici  les "+theme+" "+ "proposés  ");
 	}
@@ -102,9 +128,10 @@ private Propriete PropAgent ;
 		// TODO Auto-generated method stub
 		System.out.println(agent);
 		*/
-	}
+}
+	
 	
 
 	
-	
+
 

@@ -37,6 +37,15 @@ public class Client {
 	public void acheter (String id) {
 	System.out.println(getPrenom() + " "+ "felicitation pour l'achat du bien" + "  "+ id);
 	}
+/*
+	/TODO determination des commissions par agent //////////////////////////////////////////
 	
+	public void determinationcom() {
+	System.out.println();
+	agent1.voir("Biens");
+	agent1.toucherUneCom(prixM);
+	maxiAgent1.toucherUneCom(prixM);
+	}
+	*/
 	
 }
