@@ -30,9 +30,31 @@ public class Client {
 
 //methode voir
 	
-	public void voir (String theme) {
+
+	public static void voir (String theme) {
+		// to do rajouter le lien associatif pour avoir le nom de l'agent
+
+		 //test enum//
+		 System.out.println(" il s'agit de voir les bien disponibles \n");
+		 System.out.println("En ce moment le type de bien disponible est un "+ TypeBien.garage);
+		 
+	}
+	
+	
+	public void choisir (String theme) {
 		System.out.println( "Bienvenu"+" "+ getNom() + "  "+ getPrenom() +" "+  "choississez votre  "+" "+ theme);
 	}
+		
+	
+	
+	public void confirmerSonInteret (String theme) {
+		System.out.println( "confirmer l'interet pour le bien : "+ theme+"\n"
+				+ "1. confirmer \n"+
+				"2.annuler\n");
+	//TODO prevenir l'agent de l'interet du client
+		
+	}
+		
 	
 	public void acheter (String id) {
 	System.out.println(getPrenom() + " "+ "felicitation pour l'achat du bien" + "  "+ id);

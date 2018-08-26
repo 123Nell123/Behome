@@ -123,21 +123,9 @@ public void setAgentPropriete(Agent agentPropriete) {
 // methode
 
 	// methode
-	public static void reserver (String ref) {
-		// to do rajouter le lien associatif pour avoir le nom de l'agent
-		System.out.println(" bien reservé : "+ ref + " par " + "..." );
-		
-	}
 
-	public static void voir () {
-		// to do rajouter le lien associatif pour avoir le nom de l'agent
 
-		 //test enum//
-		 System.out.println(" il s'agit de voir les bien disponibles \n");
-		 System.out.println("En ce moment le type de bien disponible est un "+ TypeBien.garage);
-		 
-	}
-		
+	
 	
 	@Override
 	public String toString() {

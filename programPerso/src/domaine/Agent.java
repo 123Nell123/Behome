@@ -17,7 +17,7 @@ private Propriete PropAgent ;
 	
 	
 // getters and setters
-	public String getNom() {
+	public  String getNom() {
 		return nom;
 	}
 	public void setNom(String nom) {
@@ -104,10 +104,15 @@ private Propriete PropAgent ;
 	
 	
 	
-	public void voir (String theme) {
-		System.out.println( "cher agent"+ " "+ getNom()+ " "+ getPrenom()+ " "+ "voici  les "+theme+" "+ "proposés  ");
+	public static void voir (String ref) {
+		System.out.println( "cher agent"+ " "+ "voici  les  "+ "proposés  :"+ ref);
 	}
 
+	public  static void reserver (String ref) {
+		// to do rajouter le lien associatif pour avoir le nom de l'agent
+		System.out.println(" bien reservé : "+ ref + " par " + "..." );
+		
+	}
 	
 	public void toucherUneCom (float com) {
 		prime= (float) (com *0.03) ;
@@ -118,6 +123,23 @@ private Propriete PropAgent ;
 		System.out.println("la maison a coute"+" "+ com + "la prime touchee pour un agent est"+" "+ prime + " "+ "soit 3%" );
 	
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	@Override
 	public String toString() {
 		return "Agent [nom=" + nom + ", prenom=" + prenom + ", Id=" + Id + ", NbBien=" + NbBien + ", prime=" + prime
