@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 26 août 2018 à 23:10
+-- Généré le :  mer. 29 août 2018 à 05:59
 -- Version du serveur :  5.7.21
 -- Version de PHP :  5.6.35
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `behome`
 --
+CREATE DATABASE IF NOT EXISTS `behome` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `behome`;
 
 -- --------------------------------------------------------
 
@@ -37,16 +39,20 @@ CREATE TABLE IF NOT EXISTS `agent` (
   `idClient` int(10) NOT NULL,
   PRIMARY KEY (`idAgent`) USING BTREE,
   KEY `idClient` (`idClient`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `agent`
 --
 
 INSERT INTO `agent` (`idAgent`, `nom`, `prenom`, `nbBien`, `idClient`) VALUES
-(1, 'parson', 'andre', 0, 1),
-(2, 'bart', 'robert', 4, 2),
-(3, 'Ferdinand', 'Robert', 1, 3);
+(1, 'Barbaca', 'dauphin', 1, 1),
+(2, 'barbara', 'mathieuX2', 2, 2),
+(3, 'barbara', 'mathieu', 1, 3),
+(4, 'barbara', 'mathieuX', 1, 4),
+(8, 'Pierre', 'Paul', 0, 6),
+(9, 'Pablo', 'picasso', 4, 6),
+(11, 'Pablo', 'picasso', 4, 6);
 
 -- --------------------------------------------------------
 
@@ -56,7 +62,7 @@ INSERT INTO `agent` (`idAgent`, `nom`, `prenom`, `nbBien`, `idClient`) VALUES
 
 DROP TABLE IF EXISTS `bien`;
 CREATE TABLE IF NOT EXISTS `bien` (
-  `idBien` int(10) NOT NULL AUTO_INCREMENT,
+  `idBien` int(50) NOT NULL AUTO_INCREMENT,
   `type` varchar(50) DEFAULT NULL,
   `surface` int(10) DEFAULT NULL,
   `prix` int(10) DEFAULT NULL,
@@ -84,11 +90,11 @@ INSERT INTO `bien` (`idBien`, `type`, `surface`, `prix`, `ville`) VALUES
 
 DROP TABLE IF EXISTS `client`;
 CREATE TABLE IF NOT EXISTS `client` (
-  `idClient` int(10) NOT NULL AUTO_INCREMENT,
+  `idClient` int(50) NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) NOT NULL,
   `prenom` varchar(50) NOT NULL,
-  `nbBien` int(10) NOT NULL,
-  `idBien` int(10) NOT NULL,
+  `nbBien` int(50) NOT NULL,
+  `idBien` int(50) NOT NULL,
   PRIMARY KEY (`idClient`) USING BTREE,
   KEY `idBien` (`idBien`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;

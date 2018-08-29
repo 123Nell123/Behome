@@ -5,20 +5,14 @@ public class Client {
 // declaration
 	private String nom;
 	private String prenom;
+	private int nbBien, idClient, idBien;
+
+	
 
 // getters and setters
-	public String getNom() {
-		return nom;
-	}
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-	public String getPrenom() {
-		return prenom;
-	}
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
+
+	
+	
 //constructeur
 	public Client(String nom, String prenom) {
 		super();
@@ -26,6 +20,91 @@ public class Client {
 		this.prenom = prenom;
 	}	
 	
+
+public Client(int idClient,String nom, String prenom, int nbBien,int idBien) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.nbBien = nbBien;
+		this.idClient = idClient;
+		this.idBien = idBien;
+	}
+
+
+/// getteur setteurs
+
+
+public String getNom() {
+		return nom;
+	}
+
+
+
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+
+
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+
+
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+
+
+
+	public int getNbBien() {
+		return nbBien;
+	}
+
+
+
+
+	public void setNbBien(int nbBien) {
+		this.nbBien = nbBien;
+	}
+
+
+
+
+	public int getIdClient() {
+		return idClient;
+	}
+
+
+
+
+	public void setIdClient(int idClient) {
+		this.idClient = idClient;
+	}
+
+
+
+
+	public int getIdBien() {
+		return idBien;
+	}
+
+
+
+
+	public void setIdBien(int idBien) {
+		this.idBien = idBien;
+	}
+
+
+
+
+
 
 
 //methode voir
@@ -59,15 +138,10 @@ public class Client {
 	public void acheter (String id) {
 	System.out.println(getPrenom() + " "+ "felicitation pour l'achat du bien" + "  "+ id);
 	}
-/*
-	/TODO determination des commissions par agent //////////////////////////////////////////
-	
-	public void determinationcom() {
-	System.out.println();
-	agent1.voir("Biens");
-	agent1.toucherUneCom(prixM);
-	maxiAgent1.toucherUneCom(prixM);
-	}
-	*/
+@Override
+public String toString() {
+	return "Client [idClient=" + idClient + ",nom=" + nom + ", prenom=" + prenom + ", nbBien=" + nbBien + ",  idBien="
+			+ idBien + "]";
+}
 	
 }

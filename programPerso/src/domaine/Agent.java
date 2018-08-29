@@ -8,15 +8,24 @@ public class Agent {
 	
 	private String nom;
 	private String prenom;
-	private String Id;
+	private int Id;
 	private int NbBien;
 	private float prime;
 	//TODO bilaterale
 	
 private Propriete PropAgent ;
+private Client client;
+private int idClient ;
+
 	
 	
-// getters and setters
+public Client getClient() {
+	return client;
+}
+public void setClient(Client client) {
+	this.client = client;
+}
+	// getters and setters
 	public  String getNom() {
 		return nom;
 	}
@@ -29,10 +38,10 @@ private Propriete PropAgent ;
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	public String getId() {
+	public int getId() {
 		return Id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		Id = id;
 	}
 	public int getNbBien() {
@@ -50,7 +59,12 @@ private Propriete PropAgent ;
 		this.prime = prime;
 	}
 	
-	
+	public int getIdClient() {
+		return idClient;
+	}
+	public void setIdClient(int idClient) {
+		this.idClient = idClient;
+	}
 	public Propriete getPropAgent() {
 		return PropAgent;
 	}
@@ -59,7 +73,11 @@ private Propriete PropAgent ;
 	}
 	
 	// constructeur
-	public Agent(String nom, String prenom, String id, int nbBien, float prime) {
+	
+	public Agent() {};
+	
+	
+	public Agent(String nom, String prenom, int id, int nbBien, float prime) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -67,9 +85,19 @@ private Propriete PropAgent ;
 		NbBien = nbBien;
 	}
 
+	public Agent(int id, String nom, String prenom, int nbBien) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		Id = id;
+		NbBien = nbBien;
 		
 	
-	public Agent(String nom, String prenom, String id, int nbBien, float prime, Propriete propAgent) {
+	}
+	
+	
+	public Agent(String nom, String prenom, int id, int nbBien, float prime, Propriete propAgent, Client client,
+			int idClient) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -77,7 +105,65 @@ private Propriete PropAgent ;
 		NbBien = nbBien;
 		this.prime = prime;
 		PropAgent = propAgent;
+		this.client = client;
+		this.idClient = idClient;
+	
 	}
+	
+	public Agent(String nom, String prenom, int id, int nbBien, int idClient) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		Id = id;
+		NbBien = nbBien;
+		this.idClient = idClient;
+	
+	}
+		
+	
+	public Agent(String nom, String prenom, int id, int nbBien, Client client, int idClient) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		Id = id;
+		NbBien = nbBien;
+		this.client = client;
+		this.idClient = idClient;
+	}
+	public Agent(String nom, String prenom, int id, int nbBien) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		Id = id;
+		NbBien = nbBien;
+		
+	}
+	
+	
+	public Agent(int id, String nom, String prenom, int nbBien, Client client) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		Id = id;
+		NbBien = nbBien;
+		this.client = client;
+		
+	}
+	
+	
+
+
+	public Agent( String nom, String prenom, int id) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		Id = id;
+
+		
+	}
+	
+	
+	
 	// declaration methode
 	
 	
@@ -130,26 +216,11 @@ private Propriete PropAgent ;
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	@Override
 	public String toString() {
 		return "Agent [nom=" + nom + ", prenom=" + prenom + ", Id=" + Id + ", NbBien=" + NbBien + ", prime=" + prime
-				+ ", PropAgent=" + PropAgent + "]";
+				+ ", PropAgent=" + PropAgent + ", client=" + client + ", idClient=" + idClient + "]";
 	}
-	/*  public void getRef(Agent agent) {
-		agent = Agent.getRef(PropAgent);
-		// TODO Auto-generated method stub
-		System.out.println(agent);
-		*/
 }
 	
 	

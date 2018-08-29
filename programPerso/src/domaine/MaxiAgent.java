@@ -5,7 +5,7 @@ public class MaxiAgent extends Agent {
 	
 
 	// constructeur
-	public MaxiAgent(String nom, String prenom, String id, int nbBien, float prime) {
+	public MaxiAgent(String nom, String prenom, int id, int nbBien, float prime) {
 		super(nom, prenom, id, nbBien, prime);
 		// TODO Auto-generated constructor stub
 	}

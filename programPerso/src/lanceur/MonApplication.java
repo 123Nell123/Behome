@@ -1,34 +1,50 @@
 package lanceur;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
-import domaine.Agent;
-import domaine.Client;
-import domaine.MaxiAgent;
-import domaine.Propriete;
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-
-
+import domaine.*;
+import fr.gtm.behomeDao.*;
 
 
 public class MonApplication {
 
 	public static void main(String[] args) {
 		
-		sauverEnBase( 1,"Daudet","Alphonse",01,01);
+		
+		// declarer un objet de la classe AgentDao
+		 AgentDao agentDao;
+		Agent agent1;
+		Client client1;
+		
+		// instancier un agents 
+		
+		agentDao = new AgentDao () ;
+			
+		
+		//public Client(int idClient,String nom, String prenom, int nbBien,  int idBien
+		client1 = new Client (6,"Patrick", "Sebastien",  1, 1);
+		
+		//public Agent(int id, String nom, String prenom, int nbBien, Client client)
+		agent1 = new Agent(11, "Pablo", "picasso", 4, client1);
+		
+		
+		// utiliser
+		
+		// appele de methode createAgent avec comme parametre un agent permet d'associer a u
+	
+		
+		
+		agentDao.createAgent(agent1);
+		
+	
 		System.out.println("ca commence");
-		lireEnBase();
+		agentDao.read();
 		
 		
-		
+/*		
 		
 		
 		// TODO Auto-generated method stub
@@ -253,116 +269,25 @@ public class MonApplication {
 			}
 			System.out.println("Aurevoir et à bientot");
 
-			break;
-
-		default:
-			System.out.println("Nous n'avons pas compris votre demande");
-
-		}
-
-//TODO for (int i=1;i<nbAgent;i++)
-
-		// TODO surcharge de VoirBien pas le meme nombre d'argument
-		/*
-		 * voirbienClient = new VoirBien (" maison", 45,350000,true); voirbienAgent =
-		 * new VoirBien (" maison", 45,350000,true,"GeneralBati");
-		 */
-
-	}
-	
-	
-	public static void sauverEnBase(int idAgent, String nom, String prenom, int nbBien, int IdClient) {
-
-		// Information d'accès à la base de données
-		String url = "jdbc:mysql://localhost/behome?autoReconnect=true&useSSL=false";
-		String login = "root";
-		String passwd = "";
-		Connection cn =null;
-		Statement st =null;
-
-		try {
-
-			// Etape 1 : Chargement du driver
-			Class.forName("com.mysql.jdbc.Driver");
-
-			// Etape 2 : récupération de la connexion
-			cn = DriverManager.getConnection(url, login, passwd);
-
-			// Etape 3 : Création d'un statement
-			st = cn.createStatement();
-
-			String sql = "INSERT INTO `agent` (`idAgent`,`nom`,`prenom`,`nbBien`,`idClient`) VALUES ('"
-					+ idAgent + "','"+ nom +"','"+prenom+"','"+nbBien+','+IdClient+"')";
-
-			
-			
-			
-			// Etape 4 : exécution requête
-			st.executeUpdate(sql);
-
-			// Si récup données alors étapes 5 (parcours Resultset)
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		} finally {
-			try {
-			// Etape 6 : libérer ressources de la mémoire.
-				cn.close();
-				st.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	
-	public static void lireEnBase() {
-
-		// Information d'accès à la base de données
-		String url = "jdbc:mysql://localhost/behome?autoReconnect=true&useSSL=false";
-		String login = "root";
-		String passwd = "";
-		Connection cn =null;
-		Statement st =null;
-		ResultSet rs =null;
+					break;
 		
-		try {
-
-			// Etape 1 : Chargement du driver
-			Class.forName("com.mysql.jdbc.Driver");
-
-			// Etape 2 : récupération de la connexion
-			cn = DriverManager.getConnection(url, login, passwd);
-
-			// Etape 3 : Création d'un statement
-			st = cn.createStatement();
-
-			String sql = "SELECT * FROM agent";
-
-			// Etape 4 : exécution requête
-			rs = st.executeQuery(sql);
-
-			// Si récup données alors étapes 5 (parcours Resultset)
-
-			while (rs.next()) {
-				
-				System.out.println(rs.getString("idAgent")+ rs.getString("nom")); 
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-			// Etape 6 : libérer ressources de la mémoire.
-				cn.close();
-				st.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
+				default:
+					System.out.println("Nous n'avons pas compris votre demande");
+		
+				}
+		
+		//TODO for (int i=1;i<nbAgent;i++)
+		
+				// TODO surcharge de VoirBien pas le meme nombre d'argument
+				/*
+				 * voirbienClient = new VoirBien (" maison", 45,350000,true); voirbienAgent =
+				 * new VoirBien (" maison", 45,350000,true,"GeneralBati");
+				 */
+		
+	
+	
+	
+	
 	
 	}
 	
