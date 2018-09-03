@@ -1,13 +1,13 @@
-package domaine;
+package fr.gtm.behome.domaine;
 
-public class Propriete {
+public class Bien {
 	// decla
 	private String type;
 	private int surface;
 	private int prix;
 	private Boolean disponible ;
 	private String entrepreneur;
-	private String ref;
+	private int Id;
 	
 	//TODO association bilaterale
 	
@@ -29,17 +29,27 @@ public String getType() {
 }
 
 
-public Propriete(String type, int surface, int prix, Boolean disponible, String entrepreneur, String ref) {
+public int getId() {
+	return Id;
+}
+
+
+public void setId(int id) {
+	Id = id;
+}
+
+
+public Bien(String type, int surface, int prix, Boolean disponible, String entrepreneur, int Id) {
 	super();
 	this.type = type;
 	this.surface = surface;
 	this.prix = prix;
 	this.disponible = disponible;
 	this.entrepreneur = entrepreneur;
-	this.ref = ref;
+	this.Id = Id;
 	
 }
-public Propriete(String type, int surface, int prix, Boolean disponible, String entrepreneur, String ref,
+public Bien(String type, int surface, int prix, Boolean disponible, String entrepreneur, 
 			Agent agentPropriete) {
 		super();
 		this.type = type;
@@ -47,7 +57,6 @@ public Propriete(String type, int surface, int prix, Boolean disponible, String 
 		this.prix = prix;
 		this.disponible = disponible;
 		this.entrepreneur = entrepreneur;
-		this.ref = ref;
 		AgentPropriete = agentPropriete;
 	}
 
@@ -97,14 +106,6 @@ public void setEntrepreneur(String entrepreneur) {
 }
 
 
-public String getRef() {
-	return ref;
-}
-
-
-public void setRef(String ref) {
-	this.ref = ref;
-}
 
 
 public Agent getAgentPropriete() {
@@ -129,18 +130,8 @@ public void setAgentPropriete(Agent agentPropriete) {
 	
 	@Override
 	public String toString() {
-		return "Propriete [type=" + type + ", surface=" + surface + ", prix=" + prix + ", disponible=" + disponible
-				+ ", entrepreneur=" + entrepreneur + ", ref=" + ref + ", AgentPropriete=" + AgentPropriete
-				+ ", getAgentPropriete()=" + getAgentPropriete() + "]";
-	}
-/*
-	/TODO  affichage du prix du bien //////////////////////////////////////////
-	public void affichagePrix () 
-	{
-	Scanner sc3 = new Scanner(System.in);
-	System.out.println("entrez un prixM :");
-			     int prixm = sc3.nextInt();
-			     }
-*/	
+		return "Bien [type=" + type + ", surface=" + surface + ", prix=" + prix + ", disponible=" + disponible
+				+ ", entrepreneur=" + entrepreneur + ", Id=" + Id + ", AgentPropriete=" + AgentPropriete + "]";
+	}	
 }
 

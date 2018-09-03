@@ -1,4 +1,4 @@
-package domaine;
+package fr.gtm.behome.domaine;
 
 public class MaxiAgent extends Agent {
 
@@ -10,10 +10,23 @@ public class MaxiAgent extends Agent {
 		// TODO Auto-generated constructor stub
 	}
 
-
+	//public Agent( int id,String nom, String prenom, Bien bienAgent)
+	
+	public MaxiAgent(int id, String nom, String prenom, Bien bienAgent) {
+		super(id, nom, prenom, bienAgent);
+		// TODO Auto-generated constructor stub
+	}
 
 	
+	public MaxiAgent(int id, String nom, String prenom) {
+		super(id, nom, prenom);
+		// TODO Auto-generated constructor stub
+	}
 // method
+
+	
+
+
 
 	@Override
 	public void setPrime(float prime) {
@@ -22,6 +35,7 @@ public class MaxiAgent extends Agent {
 	}
 
 	
+
 	public void toucherUneCom (float com) {
 		
 		setPrime((float) (com *0.05)) ;

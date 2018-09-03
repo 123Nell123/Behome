@@ -1,84 +1,98 @@
-package lanceur;
+package fr.gtm.behome.lanceur;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import domaine.*;
-import fr.gtm.behomeDao.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
+import fr.gtm.behome.domaine.*;
+import fr.gtm.behomeDao.*;
 
 public class MonApplication {
 
 	public static void main(String[] args) {
-		
-		
-		// declarer un objet de la classe AgentDao
-		 AgentDao agentDao;
+		// decalarer
+		AgentDao agentDao;
 		Agent agent1;
 		Client client1;
-		
-		// instancier un agents 
-		
-		agentDao = new AgentDao () ;
-			
-		
-		//public Client(int idClient,String nom, String prenom, int nbBien,  int idBien
-		client1 = new Client (6,"Patrick", "Sebastien",  1, 1);
-		
-		//public Agent(int id, String nom, String prenom, int nbBien, Client client)
-		agent1 = new Agent(11, "Pablo", "picasso", 4, client1);
-		
-		
-		// utiliser
-		
-		// appele de methode createAgent avec comme parametre un agent permet d'associer a u
-	
-		
-		
+
+		// instancier un agents
+
+		agentDao = new AgentDao();
+
+		// public Client(int idClient,String nom, String prenom, int nbBien, int idBien
+		client1 = new Client(6, "Patrick", "Sebastien", 1, 1);
+
+		// public Agent(int id, String nom, String prenom, int nbBien, Client client)
+		agent1 = new Agent(12, "Pablo", "picasso", 4, client1);
+
+		/*
+		 * //*******modification de la BDD par un scanner 
+		 * System.out.println("creation de la base de donnee"); // declarer un objet de
+		 * la classe AgentDao
+		 * 
+		 * // remplacer l'objet agent par des objets mis a la main
+		 * System.out.println("entrez svp le Id du client"); Scanner sc56 = new
+		 * Scanner(System.in); int ajoutId = sc56.nextInt(); agent1.setId(ajoutId);
+		 * 
+		 * 
+		 * System.out.println("entrez svp le nom du client"); Scanner sc57 = new
+		 * Scanner(System.in); String ajoutNom = sc57.nextLine();
+		 * agent1.setNom(ajoutNom);
+		 * 
+		 * System.out.println("entrez svp le prenom du client"); Scanner sc58 = new
+		 * Scanner(System.in); String ajoutPrenom = sc58.nextLine();
+		 * agent1.setPrenom(ajoutPrenom);
+		 * 
+		 * 
+		 * System.out.println("entrez svp le nbre de bien du client"); Scanner sc59 =
+		 * new Scanner(System.in); int ajoutNbBien = sc59.nextInt();
+		 * agent1.setNbBien(ajoutNbBien);
+		 * 
+		 * 
+		 * System.out.println("entrez svp le Id du bien"); Scanner sc60 = new
+		 * Scanner(System.in); int ajoutIdBien = sc60.nextInt(); agent1.getBienAgent();
+		 */
+
+			//utiliser 
 		agentDao.createAgent(agent1);
-		
-	
+
 		System.out.println("ca commence");
 		agentDao.read();
-		
-		
-/*		
-		
-		
+
 		// TODO Auto-generated method stub
 
 		// declaration prealable
 
 		// declaration pour association
 
-		Client client1;
-		Agent agent1;
+		Client client10;
+		Agent agent10;
 
-		MaxiAgent maxiAgent1;
-		Propriete propAgent4;
-		Agent agent4;
+		MaxiAgent maxiAgent10;
+		Bien propAgent4;
+		Agent agent4 = null;
 
-		Propriete propriete4;
+		Bien propriete4;
 		Agent agentPropriete4;
 
 		// initialisation
-		agent1 = new Agent("BOB", null, null, 0, 0);
-		client1 = new Client(null, null);
-		maxiAgent1 = new MaxiAgent(null, null, null, 0, 0);
+		// public Agent(int id, String nom, String prenom, int nbBien, Client client)
+		
+		//public Agent( int id,String nom, String prenom, Bien bienAgent)
+		
+		agent10 = new Agent(10,"BOB","bart");
+		client10 = new Client(null, null);
+		maxiAgent10 = new MaxiAgent(10,"BOB","bart");
 
-		propriete4 = new Propriete(null, 0, 0, null, null, null);
-		agent4 = new Agent(null, null, null, 0, 0, propriete4);
-		
-		propAgent4 =  new Propriete(null, 0, 0, null, null, null);
-		agentPropriete4 = new Agent("BOB", null, null, 0, 0,propAgent4);
-		
-		
-		
+		propriete4 = new Bien(null, 0, 0, null, null, null);
+		propAgent4 = new Bien(null, 0, 0, null, null, null);
+		agentPropriete4 = new Agent(10,"BOB","bart",propAgent4);
+
 		// utilisation
-		
-		
 
 		System.out.println("Bienvenu dans l'interface de gestion Behome \n" + "Voulez vous connectez : \n"
 				+ "1. En tant que Client (tapez 1) (***********attention pas encore operationnel************* \n"
@@ -111,8 +125,8 @@ public class MonApplication {
 			System.out.println("Pour sortir du programme tape (exit) a la fin d'une requete ");
 			while (status == "OnyVa") {
 				System.out.println("\n Bienvenu dans l'interface des employes, que souhaiter vous faire? \n"
-						+ "1. Accéder aux inscriptions  \n" + "2. Consulter les biens disponibles \n"
-						+ "3. Auditer \n" + "4. Quitter le programme \n");
+						+ "1. Accéder aux inscriptions  \n" + "2. Consulter les biens disponibles \n" + "3. Auditer \n"
+						+ "4. Quitter le programme \n");
 				System.out.println(
 						"**************************************************************************************");
 
@@ -177,11 +191,11 @@ public class MonApplication {
 				//// **************************auditer*******************
 				case 3:
 					System.out.println(" *****************menu auditer************************** ");
-					System.out.println("que voulez vous savoir \n" +
-					"1. le(s) client(s) d'un agent ? (non operationnel) \n"
-							+ "2. l'agent d'un client (non operationnel)? \n" +
-							"3. le nbre de bien reserve par un agent (en cours)  ? \n"
-							+ "4. connaitre l'effectif Behome");
+					System.out.println(
+							"que voulez vous savoir \n" + "1. le(s) client(s) d'un agent ? (non operationnel) \n"
+									+ "2. l'agent d'un client (non operationnel)? \n"
+									+ "3. le nbre de bien reserve par un agent (en cours)  ? \n"
+									+ "4. connaitre l'effectif Behome");
 
 					Scanner scdeb3 = new Scanner(System.in);
 					int choixaudit = scdeb3.nextInt();
@@ -209,20 +223,20 @@ public class MonApplication {
 						// requete lien client //bien
 						///////////////// requete retrouve les biens reserves par un agent et l agent
 						// qui a reserver un bien particulier////////////////////////////
-						System.out.println(maxiAgent1);
+						System.out.println(maxiAgent10);
 
 						System.out.println(propAgent4);
 						System.out.println(agent4);
-						Propriete TATA;
-						TATA = agent4.getPropAgent();
-						System.out.println("TATA= " + agent4.getNom() + " " + TATA.getRef());
+						Bien TATA;
+						TATA = agent4.getBienAgent();
+						System.out.println("TATA= " + agent4.getNom() + " " + TATA.getId());
 
 						Agent TOTO;
 						TOTO = propriete4.getAgentPropriete();
 						System.out.println(TOTO);
 						System.out.println(agentPropriete4);
 						System.out.println(propriete4);
-						System.out.println(propriete4.getRef() + " " + TOTO.getNom());
+						System.out.println(propriete4.getId() + " " + TOTO.getNom());
 
 					}
 
@@ -236,7 +250,7 @@ public class MonApplication {
 						ArrayList<Agent> effectif = new ArrayList<Agent>();
 						effectif.add(agent1);
 						effectif.add(agent4);
-						effectif.add(maxiAgent1);
+						effectif.add(maxiAgent10);
 
 						int nbEffectif = effectif.size();
 						System.out.println("nbre d agent chez Behome :" + nbEffectif);
@@ -269,27 +283,21 @@ public class MonApplication {
 			}
 			System.out.println("Aurevoir et à bientot");
 
-					break;
-		
-				default:
-					System.out.println("Nous n'avons pas compris votre demande");
-		
-				}
-		
-		//TODO for (int i=1;i<nbAgent;i++)
-		
-				// TODO surcharge de VoirBien pas le meme nombre d'argument
-				/*
-				 * voirbienClient = new VoirBien (" maison", 45,350000,true); voirbienAgent =
-				 * new VoirBien (" maison", 45,350000,true,"GeneralBati");
-				 */
-		
-	
-	
-	
-	
-	
+			break;
+
+		default:
+			System.out.println("Nous n'avons pas compris votre demande");
+
+		}
+
+		// TODO for (int i=1;i<nbAgent;i++)
+
+		// TODO surcharge de VoirBien pas le meme nombre d'argument
+		/*
+		 * voirbienClient = new VoirBien (" maison", 45,350000,true); voirbienAgent =
+		 * new VoirBien (" maison", 45,350000,true,"GeneralBati");
+		 */
+
 	}
-	
-	
+
 }

@@ -10,9 +10,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import domaine.Agent;
-
-import domaine.Client;
+import fr.gtm.behome.domaine.Agent;
+import fr.gtm.behome.domaine.Client;
 
 public class AgentDao {
 

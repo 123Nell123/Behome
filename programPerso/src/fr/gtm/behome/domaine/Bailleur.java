@@ -1,4 +1,4 @@
-package domaine;
+package fr.gtm.behome.domaine;
 
 public class Bailleur implements Iacheter {
 

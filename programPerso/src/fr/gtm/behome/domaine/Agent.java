@@ -1,4 +1,4 @@
-package domaine;
+package fr.gtm.behome.domaine;
 
 import java.util.Scanner;
 
@@ -11,14 +11,24 @@ public class Agent {
 	private int Id;
 	private int NbBien;
 	private float prime;
+	
 	//TODO bilaterale
 	
-private Propriete PropAgent ;
+private Bien bienAgent;
 private Client client;
 private int idClient ;
 
+
+
 	
 	
+public Bien getBienAgent() {
+	return bienAgent;
+}
+public void setBienAgent(Bien bienAgent) {
+	this.bienAgent = bienAgent;
+}
+
 public Client getClient() {
 	return client;
 }
@@ -65,12 +75,7 @@ public void setClient(Client client) {
 	public void setIdClient(int idClient) {
 		this.idClient = idClient;
 	}
-	public Propriete getPropAgent() {
-		return PropAgent;
-	}
-	public void setPropAgent(Propriete propAgent) {
-		PropAgent = propAgent;
-	}
+
 	
 	// constructeur
 	
@@ -95,19 +100,22 @@ public void setClient(Client client) {
 	
 	}
 	
+// 
 	
-	public Agent(String nom, String prenom, int id, int nbBien, float prime, Propriete propAgent, Client client,
-			int idClient) {
+	public Agent( int id,String nom, String prenom, Bien bienAgent) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
 		Id = id;
-		NbBien = nbBien;
-		this.prime = prime;
-		PropAgent = propAgent;
-		this.client = client;
-		this.idClient = idClient;
+		this.bienAgent = bienAgent;
+	}
 	
+	public Agent( int id,String nom, String prenom) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		Id = id;
+
 	}
 	
 	public Agent(String nom, String prenom, int id, int nbBien, int idClient) {
@@ -121,6 +129,18 @@ public void setClient(Client client) {
 	}
 		
 	
+	public Agent(String nom, String prenom, int id, int nbBien, float prime, Bien bienAgent, Client client,
+			int idClient) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		Id = id;
+		NbBien = nbBien;
+		this.prime = prime;
+		this.bienAgent = bienAgent;
+		this.client = client;
+		this.idClient = idClient;
+	}
 	public Agent(String nom, String prenom, int id, int nbBien, Client client, int idClient) {
 		super();
 		this.nom = nom;
@@ -219,7 +239,7 @@ public void setClient(Client client) {
 	@Override
 	public String toString() {
 		return "Agent [nom=" + nom + ", prenom=" + prenom + ", Id=" + Id + ", NbBien=" + NbBien + ", prime=" + prime
-				+ ", PropAgent=" + PropAgent + ", client=" + client + ", idClient=" + idClient + "]";
+				+ ", bienAgent=" + bienAgent + ", client=" + client + ", idClient=" + idClient + "]";
 	}
 }
 	
