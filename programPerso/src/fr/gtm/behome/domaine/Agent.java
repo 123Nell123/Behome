@@ -102,6 +102,13 @@ public void setClient(Client client) {
 	
 // 
 	
+	
+	
+	
+	
+	
+	
+	
 	public Agent( int id,String nom, String prenom, Bien bienAgent) {
 		super();
 		this.nom = nom;
@@ -110,6 +117,10 @@ public void setClient(Client client) {
 		this.bienAgent = bienAgent;
 	}
 	
+	public Agent(int id) {
+	super();
+	Id = id;
+}
 	public Agent( int id,String nom, String prenom) {
 		super();
 		this.nom = nom;
@@ -118,7 +129,7 @@ public void setClient(Client client) {
 
 	}
 	
-	public Agent(String nom, String prenom, int id, int nbBien, int idClient) {
+	public Agent(int id,String nom, String prenom,  int nbBien, int idClient) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -229,10 +240,6 @@ public void setClient(Client client) {
 		System.out.println("la maison a coute"+" "+ com + "la prime touchee pour un agent est"+" "+ prime + " "+ "soit 3%" );
 	
 	}
-	
-	
-	
-	
 	
 	
 	

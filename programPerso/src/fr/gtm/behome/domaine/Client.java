@@ -34,6 +34,11 @@ public Client(int idClient,String nom, String prenom, int nbBien,int idBien) {
 /// getteur setteurs
 
 
+public Client() {
+	// TODO Auto-generated constructor stub
+}
+
+
 public String getNom() {
 		return nom;
 	}
