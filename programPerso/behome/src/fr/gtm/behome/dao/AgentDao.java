@@ -1,4 +1,4 @@
-package fr.gtm.behomeDao;
+package fr.gtm.behome.dao;
 
 import java.sql.Connection;
 
@@ -11,7 +11,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import fr.gtm.behome.domaine.Agent;
-import fr.gtm.behome.domaine.Client;
 
 public class AgentDao {
 

@@ -36,6 +36,7 @@ public class MaxiAgent extends Agent {
 
 	
 
+	@Override
 	public void toucherUneCom (float com) {
 		
 		setPrime((float) (com *0.05)) ;

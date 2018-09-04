@@ -21,6 +21,14 @@ public class Client {
 	}	
 	
 
+	
+public Client(int idClient) {
+	super();
+	this.idClient = idClient;
+}
+
+
+
 public Client(int idClient,String nom, String prenom, int nbBien,int idBien) {
 		super();
 		this.nom = nom;

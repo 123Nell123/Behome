@@ -1,15 +1,10 @@
-package fr.gtm.behome.lanceur;
+package fr.gtm.behome.presentation;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import fr.gtm.behome.domaine.*;
-import fr.gtm.behomeDao.*;
+import fr.gtm.behome.dao.*;
 
 public class MonApplication {
 
@@ -216,7 +211,7 @@ public class MonApplication {
 						//////////////////////////// action du client
 						//////////////////////////// /////////////////////////////////////////////
 						System.out.println();
-						client1.voir("Maison");
+						Client.voir("Maison");
 						client1.acheter("ref15688");
 						System.out.println();
 
