@@ -5,22 +5,22 @@ import java.util.Scanner;
 
 import fr.gtm.behome.dao.AgentDao;
 import fr.gtm.behome.domaine.Agent;
-
+import fr.gtm.behome.presentation.LanceurBis;
 
 
 public class MonApplication {
 
 	public static void main(String[] args) {
 		//declaration
-		Agent agent1;
+		Agent agent1, agent2;
+		LanceurBis lanceurBis;
 		
 		// initialisaton
-		agent1 = new Agent();
+		//agent1 = new Agent();
+		agent2 = new Agent();
+		lanceurBis = new LanceurBis();
 		
-		
-		
-	
-	
+				
 
 		System.out.println("Bienvenu dans l'interface de gestion Behome \n" + "Voulez vous connectez : \n"
 				+ "1. En tant que Client (tapez 1) (***********attention pas encore operationnel************* \n"
@@ -68,7 +68,8 @@ public class MonApplication {
 				//// **************************inscription*******************
 				case 1:
 					System.out.println("*****************menu inscription**************************");
-					System.out.println("voulez vous, \n" + "1. Inscrire un agent \n"
+					System.out.println("voulez vous: \n" 
+							+ "1. Inscrire un agent \n"
 							+ "2. Verifier les agents dans la base \n"
 							+ "3. Modifier un agent \n"
 							+ "4. Effacer un agent \n"
@@ -77,19 +78,24 @@ public class MonApplication {
 							"**************************************************************************************");
 					Scanner sc3 = new Scanner(System.in);
 					int choixInscrire = sc3.nextInt();
-				//	sc.close();
+					//sc3.close();
 					/// appeller declarer nbre agent
 					switch (choixInscrire) {
 
 					case 1:
+						lanceurBis.declarerA();
+						// pour renseigner un agent, la methode declarer retourne un agent qui est : agent1;
 					
+						System.out.println("agent1 est" + agent1);
+						
+						// l agent retourne est ensuite utilise dans la methode createagent;
 						
 						AgentDao.createAgent(agent1); 
 						
 						break;
 					case 2:
 						
-						LanceurBis.declarerA();
+						lanceurBis.declarerA();
 						AgentDao.readAgent(agent1); 
 						
 						
@@ -99,7 +105,7 @@ public class MonApplication {
 					case 3:
 						System.out.println("inscire un nouveau bien non possible sur cette version \n");
 						// TODO inscrire un nouveau bien cf BDD
-						LanceurBis.declarerA();
+						lanceurBis.declarerA();
 						AgentDao.update(agent1);
 						
 						
@@ -107,7 +113,7 @@ public class MonApplication {
 						break;
 					case 4:
 						
-						LanceurBis.declarerA();
+						lanceurBis.declarerA();
 						AgentDao.getAllAgents(agent1); 
 						
 						
@@ -123,7 +129,7 @@ public class MonApplication {
 					System.out.println(" *****************menu consulter, reserver ************************** ");
 
 				
-					LanceurBis.voirA("garage");
+					lanceurBis.voirA("garage");
 					
 
 					System.out.println("voulez vous réservez ce bien ?\n" + "1.oui\n" + "2.non\n");
@@ -132,7 +138,7 @@ public class MonApplication {
 
 					if (choixReserve == 1)
 						
-						LanceurBis.reserver("garage");
+						lanceurBis.reserver("garage");
 					// TODO automatiser le type de bien
 					else {
 						System.out.println("merci de votre visite");
@@ -155,12 +161,12 @@ public class MonApplication {
 					switch (choixaudit) {
 					case 1:
 						
-						LanceurBis.auditC("MrSmith");
+						lanceurBis.auditC("MrSmith");
 											
 						break;
 					case 2:
 						
-						LanceurBis.auditA("Arthur");
+						lanceurBis.auditA("Arthur");
 					
 						break;
 

@@ -12,26 +12,26 @@ import fr.gtm.behome.dao.AgentDao;
 
 
 		public  class  LanceurBis {
-			static //decalarer
+			// declarer
 			AgentDao agentDao;
-			static Agent agent1;
-			static Client client1;
-			static Client client10;
-			static Agent agent10;
+			 Agent agent1;
+			Client client1;
+			 Client client10;
+			 Agent agent10;
 		
-			static MaxiAgent maxiAgent10;
-			static Bien propAgent4;
-			static Agent agent4 ;
+			MaxiAgent maxiAgent10;
+			 Bien propAgent4;
+			 Agent agent4 ;
 		
-			static Bien propriete4;
-			static Agent agentPropriete4;
+			 Bien propriete4;
+			 Agent agentPropriete4;
 			
 									
 		
 						
 						
 					////liee au nbre agent ///////////////////////////////////////
-						public static Agent declarerA ()
+						public  Agent declarerA ()
 						{
 							
 							
@@ -47,40 +47,37 @@ import fr.gtm.behome.dao.AgentDao;
 										agent1 = new Agent(15, "Pablo", "picasso", 4, client1);
 
 												
-												// utiliser 
-												AgentDao.createAgent(agent1);
+							// utiliser 
+										//AgentDao.createAgent(agent1);
+									
+										System.out.println("ca commence");
+										
+									
+						
+									
+										// declaration prealable
+									
+										// declaration pour association
+						
 											
-												System.out.println("ca commence");
-												
 											
-								
-											
-												// declaration prealable
-											
-												// declaration pour association
-											
-											
-											
-												// initialisation
-												// public Agent(int id, String nom, String prenom, int nbBien, Client client)
-												
-												//public Agent( int id,String nom, String prenom, Bien bienAgent)
-												
-												agent10 = new Agent(10,"BOB","bart");
-												client10 = new Client(null, null);
-												maxiAgent10 = new MaxiAgent(10,"BOB","bart");
-											
-												propriete4 = new Bien(null, 0, 0, null, null, null);
-												propAgent4 = new Bien(null, 0, 0, null, null, null);
-												agentPropriete4 = new Agent(10,"BOB","bart",propAgent4);
-										}
+							// initialisation
+										// public Agent(int id, String nom, String prenom, int nbBien, Client client)
+										
+										//public Agent( int id,String nom, String prenom, Bien bienAgent)
+										
+										agent10 = new Agent(10,"BOB","bart");
+										client10 = new Client(null, null);
+										maxiAgent10 = new MaxiAgent(10,"BOB","bart");
+									
+										propriete4 = new Bien(null, 0, 0, null, null, null);
+										propAgent4 = new Bien(null, 0, 0, null, null, null);
+										agentPropriete4 = new Agent(10,"BOB","bart",propAgent4);
+					}
 
-				// utilisation
+						
+							// utilisation
 	
-							
-							
-					
-							
 							
 							  //*******modification de la BDD par un scanner 
 							  System.out.println("creation de la base de donnee");
@@ -115,17 +112,18 @@ import fr.gtm.behome.dao.AgentDao;
 							 int ajoutIdBien = sc60.nextInt(); 
 							 agent1.getBienAgent();
 							 
+							 System.out.println("en sortie du scan agent1"+agent1);
 							 return agent1;
 						}
 						
 						//////////////////////////////////////////////////////////////////////////////////////////////////
 					
 						
-						public static void voirA (String ref) {
+						public void voirA (String ref) {
 							System.out.println( "cher agent"+ " "+ "voici  les  "+ "proposés  :"+ ref);
 						}
 					
-						public  static void reserver (String ref) {
+						public  void reserver (String ref) {
 							// to do rajouter le lien associatif pour avoir le nom de l'agent
 							System.out.println(" bien reservé : "+ ref + " par " + "..." );
 							
@@ -176,7 +174,7 @@ import fr.gtm.behome.dao.AgentDao;
 
 
 
-							public static void auditA(String string) {
+							public  void auditA(String string) {
 								// TODO Auto-generated method stub
 								// requete lien client //bien
 								///////////////// requete retrouve les biens reserves par un agent et l agent
@@ -190,7 +188,7 @@ import fr.gtm.behome.dao.AgentDao;
 								System.out.println("TATA= " + agent4.getNom() + " " + TATA.getId());
 							}
 							
-							public static void auditC(String string) {
+							public  void auditC(String string) {
 								Agent TOTO;
 								TOTO = propriete4.getAgentPropriete();
 								System.out.println(TOTO);

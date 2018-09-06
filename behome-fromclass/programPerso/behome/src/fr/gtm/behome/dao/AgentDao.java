@@ -19,11 +19,11 @@ public  class AgentDao {
 
 	//methode create
 	
-		public static boolean createAgent ( Agent agent1) {
+		public static boolean createAgent ( Agent pAgent) {
 			
 			System.out.println("cette methode cree une table d'agent");
 			
-			LanceurBis.declarerA();
+		
 			
 			//etape1:  on se connecte avec la base de donnee
 			
@@ -53,9 +53,16 @@ public  class AgentDao {
 			
 			// etape 3: on definit la requete SQL
 	
+System.out.println(pAgent.getId());
+System.out.println(pAgent.getNom());
+System.out.println(pAgent.getPrenom());
+System.out.println(pAgent.getNbBien());
+
+System.out.println(pAgent.getClient().getIdClient());
+
 
 							            String sql = "INSERT INTO `agent` VALUES ('"
-							            + agent1.getId() + "','"+ agent1.getNom() +"','"+agent1.getPrenom()+"','"+agent1.getNbBien()+"','"+agent1.getClient().getIdClient()+"')";
+							            + pAgent.getId() + "','"+ pAgent.getNom() +"','"+pAgent.getPrenom()+"','"+pAgent.getNbBien()+"','"+pAgent.getClient().getIdClient()+"')";
 			
 			
 										
